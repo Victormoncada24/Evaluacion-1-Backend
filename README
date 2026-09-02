@@ -22,7 +22,7 @@ La interfaz web enmascara los endpoints REST, mostrando tablas dinámicas en HTM
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/Victormoncada24/Evaluacion-1-Backend.git
-   cd Evaluacion-1-Backend/academic_project
+   cd academic_project
 
 
 Crear y activar entorno virtual yo lo instale fuera en mi carpeta (Evaluacion-1-Backend):
