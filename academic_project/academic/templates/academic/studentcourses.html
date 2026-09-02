@@ -1,0 +1,50 @@
+{% extends "academic/base.html" %}
+{% block title %}Inscripciones de Estudiantes{% endblock %}
+
+{% block content %}
+<div class="hero mb-4">
+    <h1>Inscripciones</h1>
+    <p>Listado de estudiantes inscritos en los cursos.</p>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h5 class="card-title">Estudiantes inscritos</h5>
+        <table class="table table-striped table-hover mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>Estudiante</th>
+                    <th>Curso</th>
+                    <th>Profesor</th>
+                </tr>
+            </thead>
+            <tbody id="enrollments-table">
+                <!-- Filas dinámicas -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Consumir el endpoint /api/studentcourses/
+    fetch("/api/studentcourses/")
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById("enrollments-table");
+            tableBody.innerHTML = "";
+
+            data.forEach(enrollment => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${enrollment.student ? enrollment.student.first_name + " " + enrollment.student.last_name : "N/A"}</td>
+                    <td>${enrollment.course ? enrollment.course.name : "N/A"}</td>
+                    <td>${enrollment.course && enrollment.course.teacher ? enrollment.course.teacher.first_name + " " + enrollment.course.teacher.last_name : "Sin asignar"}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error("Error al cargar inscripciones:", error);
+        });
+</script>
+{% endblock %}

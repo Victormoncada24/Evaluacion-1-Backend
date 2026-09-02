@@ -1,0 +1,66 @@
+[
+  {
+    "model": "academic.teacher",
+    "pk": 1,
+    "fields": {
+      "first_name": "Marcelo",
+      "last_name": "Alvarado"
+    }
+  },
+  {
+    "model": "academic.teacher",
+    "pk": 2,
+    "fields": {
+      "first_name": "Ana",
+      "last_name": "González"
+    }
+  },
+  {
+    "model": "academic.course",
+    "pk": 1,
+    "fields": {
+      "name": "Programación Backend",
+      "teacher": 1
+    }
+  },
+  {
+    "model": "academic.course",
+    "pk": 2,
+    "fields": {
+      "name": "Bases de Datos",
+      "teacher": 2
+    }
+  },
+  {
+    "model": "academic.student",
+    "pk": 1,
+    "fields": {
+      "first_name": "Victor",
+      "last_name": "Moncada"
+    }
+  },
+  {
+    "model": "academic.student",
+    "pk": 2,
+    "fields": {
+      "first_name": "Carla",
+      "last_name": "Pérez"
+    }
+  },
+  {
+    "model": "academic.studentcourse",
+    "pk": 1,
+    "fields": {
+      "student": 1,
+      "course": 1
+    }
+  },
+  {
+    "model": "academic.studentcourse",
+    "pk": 2,
+    "fields": {
+      "student": 2,
+      "course": 2
+    }
+  }
+]
