@@ -1,5 +1,6 @@
 from django.db import models
 
+# Modelo Teacher: representa a los docentes de la institución
 class Teacher(models.Model):
     id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100)
