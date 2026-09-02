@@ -1,0 +1,101 @@
+# Evaluación Nº1: Desarrollo Backend con Django & DRF
+
+## 📖 Descripción
+Este proyecto corresponde a la Evaluación Nº1 de la asignatura **Desarrollo Backend**.  
+Se implementa un sistema académico con Django y Django REST Framework (DRF), que permite gestionar docentes, cursos, estudiantes e inscripciones.  
+
+La interfaz web enmascara los endpoints REST, mostrando tablas dinámicas en HTML que consumen los datos JSON mediante `fetch()`.
+
+---
+
+## 🚀 Tecnologías utilizadas
+- Python 3.11
+- Django 5.x
+- Django REST Framework
+- Bootstrap 5 (CDN)
+- SQLite (base de datos por defecto)
+
+---
+
+## ⚙️ Instalación y ejecución
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/Victormoncada24/Evaluacion-1-Backend.git
+   cd Evaluacion-1-Backend/academic_project
+
+
+Crear y activar entorno virtual yo lo instale fuera en mi carpeta (Evaluacion-1-Backend):
+
+bash
+python -m venv env
+.\env\Scripts\activate    # En Windows
+Instalar dependencias:
+
+bash
+pip install -r requirements.txt
+Aplicar migraciones:
+
+bash
+python manage.py makemigrations
+python manage.py migrate
+Cargar datos de prueba:
+
+bash
+python manage.py loaddata data.json
+Ejecutar el servidor:
+
+bash
+python manage.py runserver
+📂 Estructura del proyecto
+Código
+academic_project/
+│── academic/                # App principal
+│   ├── models.py            # Modelos: Teacher, Course, Student, StudentCourse
+│   ├── serializers.py       # Serializadores DRF
+│   ├── views.py             # ViewSets API + vistas HTML
+│   ├── urls.py              # Rutas de la app
+│   └── templates/academic/  # Plantillas HTML
+│       ├── base.html
+│       ├── courses.html
+│       ├── students.html
+│       ├── teachers.html
+│       └── studentcourses.html
+│
+├── academic_project/        # Configuración global
+│   ├── settings.py
+│   ├── urls.py              # Incluye API y vistas HTML
+│   └── wsgi.py / asgi.py
+│
+├── data.json                # Datos de prueba
+├── prompts.md               # Archivo con prompts y respuestas de IA
+└── README.md                # Este archivo
+🌐 Endpoints principales
+API REST:
+
+/api/teachers/
+
+/api/courses/
+
+/api/students/
+
+/api/studentcourses/
+
+Vistas HTML:
+
+/teachers/
+
+/courses/
+
+/students/
+
+/studentcourses/
+
+👨‍💻 Autor
+Victor Aukan Moncada Tropa  
+Estudiante de Analista Programador – INACAP
+
+✅ Notas
+El proyecto incluye un archivo prompts.md con los prompts y respuestas generadas por IA (Copilot), cumpliendo los criterios de la pauta.
+
+Se configuró .gitignore para excluir el entorno virtual (env/).
